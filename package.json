@@ -4,7 +4,7 @@
   "description": "simple time tracking",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "webpack-dev-server"
   },
   "author": "Gertjan Reynaert",
   "license": "MIT",

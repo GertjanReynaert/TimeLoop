@@ -7,4 +7,6 @@ Development
 -----------
 
 `npm install`
-`webpack-dev-server`
+`npm start`
+
+go to [localhost:8080/bundle](localhost:8080/bundle)
