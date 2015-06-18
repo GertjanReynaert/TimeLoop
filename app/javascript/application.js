@@ -1,3 +1,4 @@
 import React from 'react';
+import MainComponent from './components/main';
 
-React.render(<h2>Testje</h2>, document.getElementById('app'));
+React.render(<MainComponent />, document.getElementById('app'));
