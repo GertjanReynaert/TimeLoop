@@ -1,6 +1,8 @@
 var webpack = require('webpack');
 
 module.exports = {
+  devtool: 'eval',
+
   entry: [
     'webpack-dev-server/client?http://0.0.0.0:8080',
     'webpack/hot/only-dev-server',
@@ -30,9 +32,9 @@ module.exports = {
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'file-loader'
       }, {
-        test: /\.jsx?$/,
-        loaders: ['react-hot', 'babel'],
-        exclude: /(node_modules|bower_components)/
+        test: /\.js$/,
+        loaders: ['react-hot', 'babel?stage=1'],
+        exclude: /node_modules/
       }
     ]
   }
