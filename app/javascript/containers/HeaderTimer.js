@@ -20,9 +20,10 @@ export default class HeaderTimerContainer {
     const timerActions = bindActionCreators(TimerActions, dispatch);
 
     let lastTimer = timers[timers.length - 1];
+    let runningTimer = lastTimer && lastTimer.isRunning ? lastTimer : undefined;
 
     return (
-      <HeaderTimer lastTimer={lastTimer} startTimer={timerActions.startTimer} stopTimer={timerActions.stopTimer}/>
+      <HeaderTimer runningTimer={runningTimer} startTimer={timerActions.startTimer} stopTimer={timerActions.stopTimer}/>
     );
   }
 }

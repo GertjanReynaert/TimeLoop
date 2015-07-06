@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { USER_EVENT } from '../constants/EventTypes'
+import { USER_EVENT } from '../constants/EventTypes';
 
 export default class HeaderEvent extends Component {
   constructor(props) {
@@ -28,7 +28,7 @@ export default class HeaderEvent extends Component {
   render() {
     return (
       <form className="navbar-form navbar-left">
-        {this.renderFormContent()}
+        {this.props.runningTimer ? this.renderFormContent() : ''}
       </form>
     );
   }

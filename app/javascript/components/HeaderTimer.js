@@ -5,7 +5,7 @@ export default class HeaderTimer extends Component {
     super(props);
 
     this.state = {
-      newTimerText: this.props.lastTimer ? this.props.lastTimer.title : ''
+      newTimerText: this.props.runningTimer ? this.props.runningTimer.title : ''
     };
   }
 
@@ -13,13 +13,13 @@ export default class HeaderTimer extends Component {
     this.setState({ newTimerText: e.target.value });
   }
 
-  handleSubmit(e) {
+  handleSubmit() {
     this.props.startTimer(this.state.newTimerText);
     this.setState({ newTimerText: '' });
   }
 
-  handleStop(e) {
-    this.props.stopTimer(this.props.lastTimer.id);
+  handleStop() {
+    this.props.stopTimer(this.props.runningTimer.id);
     this.setState({ currentTimer: undefined });
   }
 
@@ -37,14 +37,14 @@ export default class HeaderTimer extends Component {
   }
 
   renderButton() {
-    return <button className="btn btn-default" type="button" onClick={this.handleStop.bind(this)} >Stop</button>;
+    return <button className="btn btn-default" type="button" onClick={this.handleStop.bind(this)} >Stop timer</button>;
   }
 
   render() {
-    if (true) {
-      return this.renderForm();
-    } else {
+    if (this.props.runningTimer) {
       return this.renderButton();
+    } else {
+      return this.renderForm();
     }
   }
 }
