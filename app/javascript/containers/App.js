@@ -2,16 +2,16 @@ import React from 'react';
 
 import { createStore } from 'redux';
 import { Provider } from 'redux/react';
-import * as stores from '../stores';
+import * as reducers from '../reducers';
 
 import TimerApp from './TimerApp';
 
-const redux = createStore(stores);
+const store = createStore(reducers);
 
 export default class App {
   render() {
     return (
-      <Provider redux={redux}>
+      <Provider store={store}>
         {() => <TimerApp />}
       </Provider>
     );

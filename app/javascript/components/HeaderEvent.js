@@ -14,8 +14,7 @@ export default class HeaderEvent extends Component {
   }
 
   handleSubmit() {
-    // push new event action
-
+    this.props.addEvent(this.props.lastTimer.id, this.state.newEvent);
     this.setState({newEvent: '' });
   }
 

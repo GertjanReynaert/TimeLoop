@@ -11,7 +11,8 @@ export default function timers(state = initialState, action) {
       let newTimer = {
         id: id,
         title: action.title,
-        startedAt: new Moment()
+        startedAt: new Moment(),
+        events: []
       };
 
       return [...state, newTimer];
@@ -30,10 +31,14 @@ export default function timers(state = initialState, action) {
         timestamp: new Moment()
       };
 
-      return state.map(timer =>
-        timer.id === action.id ?
-          { ...timer, events: [...timer.events, event] } :
-          timer
+      return state.map(timer => {
+        if (timer.id === action.timerId) {
+          event.id = timer.events.length > 0 ? timer.events[timer.events.length - 1].id + 1 : 0;
+          return { ...timer, events: [...timer.events, event] };
+        } else {
+          return timer;
+        }
+      }
       );
     default:
       return state;
