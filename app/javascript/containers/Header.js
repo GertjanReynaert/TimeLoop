@@ -3,13 +3,13 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { Connector } from 'redux/react';
 
-import Navigation from '../components/navigation';
-import Timer from '../components/timer';
+import HeaderTimer from '../components/HeaderTimer';
+import HeaderEvent from '../components/HeaderEvent';
 
 import * as TimerActions from '../actions/TimerActions';
 import * as EventActions from '../actions/EventActions';
 
-export default class HeaderTimerContainer {
+export default class TimerApp {
   render() {
     return (
       <Connector select={state => ({ timers: state.timers })}>
@@ -22,15 +22,13 @@ export default class HeaderTimerContainer {
     const timerActions = bindActionCreators(TimerActions, dispatch);
     const eventActions = bindActionCreators(EventActions, dispatch);
 
+    let lastTimer = timers[timers.length - 1];
+
     return (
-      <div id="app">
-        <Navigation lastTimer={timers[timers.length - 1]} timerActions={timerActions} eventActions={eventActions}/>
-        <div className="col-md-12">
-          {
-            timers.map( timer => <Timer timer={timer} key={timer.id} /> )
-          }
-        </div>
+      <div>
+        <HeaderTimer lastTimer={lastTimer} startTimer={timerActions.startTimer} stopTimer={timerActions.stopTimer}/>
+        <HeaderEvent lastTimer={lastTimer} addEvent={eventActions.addEvent}/>
       </div>
-    )
+    );
   }
 }

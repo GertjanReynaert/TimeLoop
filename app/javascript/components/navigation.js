@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import HeaderTimer from './HeaderTimer';
-import HeaderEvent from './HeaderEvent';
+import Header from '../containers/Header';
 
 export default class Navigation extends Component {
   render() {
@@ -19,8 +18,7 @@ export default class Navigation extends Component {
 
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav navbar-right">
-              <HeaderTimer lastTimer={this.props.lastTimer} startTimer={this.props.timerActions.startTimer} stopTimer={this.props.timerActions.stopTimer}/>
-              <HeaderEvent lastTimer={this.props.lastTimer} addEvent={this.props.eventActions.addEvent}/>
+              <Header/>
               <li className="dropdown">
                 <a href="#" className="dropdown-toggle">
                   Gertjan Reynaert <span className="caret"/>
