@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Header from '../containers/Header';
+
+import HeaderTimer from '../containers/HeaderTimer';
+import HeaderEvent from '../containers/HeaderEvent';
 
 export default class Navigation extends Component {
   render() {
@@ -18,7 +20,8 @@ export default class Navigation extends Component {
 
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav navbar-right">
-              <Header/>
+              <HeaderTimer/>
+              <HeaderEvent/>
               <li className="dropdown">
                 <a href="#" className="dropdown-toggle">
                   Gertjan Reynaert <span className="caret"/>

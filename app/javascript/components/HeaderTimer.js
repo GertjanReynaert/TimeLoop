@@ -23,24 +23,28 @@ export default class HeaderTimer extends Component {
     this.setState({ currentTimer: undefined });
   }
 
-  render() {
+  renderForm() {
     return (
       <form className="navbar-form navbar-left">
         <div className="input-group">
           <input type="text" className="form-control" placeholder="TestPack subject" value={this.state.newTimerText} onChange={this.handleChange.bind(this)}/>
           <span className="input-group-btn">
-            {this.renderSubmitButton()}
+            <button className="btn btn-default" type="button" onClick={this.handleSubmit.bind(this)} >Start</button>
           </span>
         </div>
       </form>
     );
   }
 
-  renderSubmitButton() {
-    if (this.props.lastTimer && this.props.lastTimer.isRunning) {
-      return <button className="btn btn-default" type="button" onClick={this.handleStop.bind(this)} >Stop</button>;
+  renderButton() {
+    return <button className="btn btn-default" type="button" onClick={this.handleStop.bind(this)} >Stop</button>;
+  }
+
+  render() {
+    if (true) {
+      return this.renderForm();
     } else {
-      return <button className="btn btn-default" type="button" onClick={this.handleSubmit.bind(this)} >Start</button>;
+      return this.renderButton();
     }
   }
 }

@@ -7,14 +7,14 @@ const initialState = [];
 export default function timers(state = initialState, action) {
   switch (action.type) {
     case START_TIMER:
-      let id = (state.length - 1) > 0 ? state[state.length - 1].id + 1 : 0;
+      let id = state.length > 0 ? state[state.length - 1].id + 1 : 0;
 
       let startEvent = {
         id: 0,
         type: START,
         title: 'Started',
         timestamp: new Moment()
-      }
+      };
 
       let newTimer = {
         id: id,
@@ -50,6 +50,7 @@ export default function timers(state = initialState, action) {
     case ADD_EVENT:
       let event = {
         id: 0,
+        type: action.eventType,
         title: action.title,
         timestamp: new Moment()
       };
