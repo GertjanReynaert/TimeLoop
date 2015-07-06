@@ -27,7 +27,7 @@ export default class HeaderTimerContainer {
         <Navigation lastTimer={timers[timers.length - 1]} timerActions={timerActions} eventActions={eventActions}/>
         <div className="col-md-12">
           {
-            timers.map( timer => <Timer timer={timer} /> )
+            timers.map( timer => <Timer timer={timer} key={timer.id} /> )
           }
         </div>
       </div>
