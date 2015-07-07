@@ -18,7 +18,9 @@ export default class HeaderTimer extends Component {
     this.setState({ newTimerText: '' });
   }
 
-  handleStop() {
+  handleStop(e) {
+    e.preventDefault();
+
     this.props.stopTimer(this.props.runningTimer.id);
     this.setState({ currentTimer: undefined });
   }
@@ -37,7 +39,7 @@ export default class HeaderTimer extends Component {
   }
 
   renderButton() {
-    return <button className="btn btn-default" type="button" onClick={this.handleStop.bind(this)} >Stop timer</button>;
+    return <li><a href="#" onClick={this.handleStop.bind(this)}>Stop timer</a></li>;
   }
 
   render() {
