@@ -2,7 +2,7 @@ import io from 'socket.io-client';
 
 class Socket {
   constructor() {
-    this.socket = io.connect('localhost:5000');
+    this.socket = io.connect('localhost:4000');
     this.socket.on('connect', this.showConnectionSuccess);
     this.socket.on('disconnect', this.showDisconnected);
 
@@ -10,11 +10,11 @@ class Socket {
   }
 
   showConnectionSuccess() {
-    console.log('================\n = Connected    =\n ================ ');
+    console.log('+--------------+\n| Connected    |\n+--------------+');
   }
 
   showDisconnected() {
-    console.log('================\n = Disconnected =\n ================ ');
+    console.log('+--------------+\n| Disconnected |\n+--------------+');
   }
 
   requestSomething(message) {
