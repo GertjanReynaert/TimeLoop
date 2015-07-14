@@ -6,6 +6,9 @@ class Socket {
     this.socket.on('connect', this.showConnectionSuccess);
     this.socket.on('disconnect', this.showDisconnected);
 
+    this.socket.on('github_update', this.addEvent);
+    this.socket.on('trello_update', this.addEvent);
+
     this.requestSomething('test');
   }
 
@@ -19,6 +22,14 @@ class Socket {
 
   requestSomething(message) {
     this.socket.emit(message);
+  }
+
+  addEvent(payload) {
+    boundAddEvent(
+      runningTimer.id,
+      USER_EVENT,
+      payload
+    );
   }
 }
 
