@@ -29,7 +29,7 @@ export default class HeaderTimer extends Component {
     return (
       <form className="navbar-form navbar-left">
         <div className="input-group">
-          <input type="text" className="form-control" placeholder="TestPack subject" value={this.state.newTimerText} onChange={this.handleChange.bind(this)}/>
+          <input type="text" className="form-control" placeholder="Create feature ..." value={this.state.newTimerText} onChange={this.handleChange.bind(this)}/>
           <span className="input-group-btn">
             <button className="btn btn-default" type="button" onClick={this.handleSubmit.bind(this)} >Start</button>
           </span>

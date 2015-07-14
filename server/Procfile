@@ -1,0 +1,2 @@
+socket: babel-node ./socket/socket.js
+web: babel-node ./web/index.js

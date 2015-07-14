@@ -36,7 +36,7 @@ export default class HeaderEvent extends Component {
   renderFormContent() {
     return (
       <div className="input-group">
-        <input type="text" className="form-control" placeholder="TestPack event subject" value={this.state.newEvent} onChange={this.handleChange.bind(this)}/>
+        <input type="text" className="form-control" placeholder="Implement ..." value={this.state.newEvent} onChange={this.handleChange.bind(this)}/>
         <span className="input-group-btn">
           <button type="button" className="btn btn-default" onClick={this.handleSubmit.bind(this)}>Add</button>
         </span>
