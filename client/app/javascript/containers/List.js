@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Connector } from 'redux/react';
+import { Connector } from 'react-redux';
 
 import Timer from '../components/timer';
 
