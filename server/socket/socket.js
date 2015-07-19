@@ -9,11 +9,15 @@ const io = socketIO(server);
 io.on('connection', (socket) => {
   console.log('connected');
 
-  socket.on('disconnect', function () {
+  socket.on('disconnect', () => {
     console.log('disconnected');
+  });
+
+  socket.on('github_update', (title) => {
+    console.log(`Github update: commit title: ${title}`);
   });
 });
 
-server.listen(port, function () {
+server.listen(port, () => {
   console.log(`Socket server listening at port ${port}`);
 });
