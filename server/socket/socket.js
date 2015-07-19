@@ -14,6 +14,7 @@ io.on('connection', (socket) => {
   });
 
   socket.on('github_update', (title) => {
+    socket.emit('github_update', title);
     console.log(`Github update: commit title: ${title}`);
   });
 });

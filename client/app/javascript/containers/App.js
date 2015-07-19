@@ -12,8 +12,8 @@ const reducer = combineReducers(reducers)
 const store = createStore(reducer);
 
 const socket = new Socket();
-socket.register('github_update', (payload) => processEvent(title, "github"));
-socket.register('trello_update', (payload) => processEvent(title, "trello"));
+socket.register('github_update', (title) => processEvent(title, 'github'));
+socket.register('trello_update', (title) => processEvent(title, 'trello'));
 
 function runningTimer() {
   debugger
@@ -24,8 +24,7 @@ function runningTimer() {
 }
 
 function processEvent(title, eventType) {
-  debugger
-  console.log(payload)
+  console.log(title);
   store.dispatch(addEvent(runningTimer.id, eventType, title))
 }
 
