@@ -9,7 +9,9 @@
   "author": "Gertjan Reynaert",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.13.1"
+    "body-parser": "^1.13.2",
+    "express": "^4.13.1",
+    "socket.io-client": "^1.3.6"
   },
   "devDependencies": {}
 }
