@@ -1,4 +1,3 @@
-export function github(payload) {
-  console.log(payload);
-  console.log('test');
+export function github(request) {
+  console.log(request.body);
 }
