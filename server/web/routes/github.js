@@ -7,7 +7,6 @@ export function github(request) {
 
   socket.on('connect', () => {
     for (let commit of payload.commits) {
-      console.log(commit.message);
       socket.emit('github_update', commit.message);
     }
   });
