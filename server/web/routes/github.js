@@ -5,6 +5,7 @@ export function github(request) {
 
   let socket = io.connect('localhost:4000');
 
+  debugger;
   for (let commit of payload.commits) {
     console.log(commit.message);
     socket.emit('github_update', commit.message);
